@@ -1,0 +1,16 @@
+<div class="userinfos">
+  <img
+    *ngIf="userInfos?.avatarUrl"
+    class="userinfos__img"
+    [src]="userInfos?.avatarUrl"
+  />
+  <span class="userinfos__name">{{ userInfos?.name }}</span>
+</div>
+<div class="list-group">
+  <a
+    class="list-group-item list-group-item-action"
+    *ngFor="let repo of userInfos?.repositorys"
+  >
+    {{ repo.name }}
+  </a>
+</div>
