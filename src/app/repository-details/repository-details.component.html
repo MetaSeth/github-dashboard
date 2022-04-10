@@ -1,1 +1,24 @@
-<p>repository-details works!</p>
+<div class="card m-2">
+  <h5 class="card-header">{{ details?.name }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ details?.language }}</h5>
+    <p class="card-text">
+      {{ details?.description }}
+    </p>
+    <p class="card-text">
+      <small class="text-muted">
+        Created at : {{ details?.creationDate | date }}
+      </small>
+    </p>
+    <p class="card-text">
+      <small class="text-muted">
+        Last updated at : {{ details?.updateDate | date }}
+      </small>
+    </p>
+    <p class="card-text">
+      <small class="text-muted"> {{ details?.stars }} </small>
+      <i class="bi bi-star-fill text-primary"></i>
+    </p>
+    <a [href]="details?.url" class="btn btn-primary">Github link</a>
+  </div>
+</div>

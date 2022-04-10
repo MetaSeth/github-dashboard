@@ -6,4 +6,5 @@ export interface Repository {
   creationDate: Date;
   updateDate: Date;
   url: string;
+  [key: string]: any;
 }

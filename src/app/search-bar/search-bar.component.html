@@ -1,20 +1,18 @@
-<div class="row g-3 my-1 d-flex justify-content-center">
-  <div class="col-auto">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Username"
-      [(ngModel)]="username"
-    />
-  </div>
-  <div class="col-auto">
-    <button
-      type="submit"
-      class="btn btn-primary mb-3"
-      (click)="searchUserInfos()"
-    >
-      search
-    </button>
-  </div>
+<div class="input-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Username"
+    aria-label="Recipient's username"
+    aria-describedby="button-addon2"
+    [(ngModel)]="username"
+  />
+  <button
+    class="btn btn-outline-dark"
+    type="button"
+    [routerLink]="['/user', username]"
+    (click)="getUserInfos()"
+  >
+    Search
+  </button>
 </div>
-<app-user-infos [userInfos]="userinfos"></app-user-infos>

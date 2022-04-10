@@ -1,5 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid justify-content-center">
-    <a class="navbar-brand">Github Dashboard</a>
+<nav class="row bg-primary p-2">
+  <div
+    class="container-fluid d-flex align-items-center justify-content-between"
+  >
+    <div class="text-white" [routerLink]="['']">{{ title }}</div>
+    <app-search-bar class="align-items-center"></app-search-bar>
   </div>
 </nav>

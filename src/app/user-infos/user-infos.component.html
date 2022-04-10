@@ -1,16 +1,20 @@
-<div class="userinfos">
-  <img
-    *ngIf="userInfos?.avatarUrl"
-    class="userinfos__img"
-    [src]="userInfos?.avatarUrl"
-  />
-  <span class="userinfos__name">{{ userInfos?.name }}</span>
-</div>
-<div class="list-group">
-  <a
-    class="list-group-item list-group-item-action"
-    *ngFor="let repo of userInfos?.repositorys"
-  >
-    {{ repo.name }}
-  </a>
+<div *ngIf="userInfos | async as userinfos">
+  <div class="userinfos">
+    <img
+      *ngIf="userinfos.avatarUrl"
+      class="userinfos__img"
+      [src]="userinfos.avatarUrl"
+    />
+    <span class="userinfos__name">{{ userinfos.name }}</span>
+  </div>
+  <div class="list-group">
+    <a
+      class="list-group-item list-group-item-action"
+      *ngFor="let repo of userinfos.repositorys | keyvalue"
+      [routerLink]="['/repository', repo.key]"
+    >
+      <i class="bi bi-archive"></i>
+      {{ repo.key }}
+    </a>
+  </div>
 </div>

@@ -3,18 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SearchBarComponent } from './search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import { UserInfosModule } from '../user-infos/user-infos.module';
-import { SearchBarRoutingModule } from './search-bar-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SearchBarComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-    UserInfosModule,
-    SearchBarRoutingModule,
-  ],
+  imports: [CommonModule, RouterModule, FormsModule, SharedModule],
   exports: [SearchBarComponent],
 })
 export class SearchBarModule {}
